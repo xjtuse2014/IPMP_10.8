@@ -1,0 +1,52 @@
+object 0: Facility  1:User    2:Admin
+author:claire   date:2015.9.24
+done: Admin(add,deleteS,update,selectS,select)
+AdminService
+登录
+/**
+ * return 100;  //登录成功
+ * return 101;  //密码错误，登录失败
+ * return 102;  //用户名不存在
+添加
+/**
+ * return 103;//管理员添加成功
+ * return 104;//管理员添加失败
+ * return 105;//管理员添加失败：ID重复
+ */
+ 
+ 删除单个管理员
+/**
+ * return 106;//管理删除成功
+ * return 107;//管理员删除失败
+ */
+ 
+ 删除所有管理员
+ /**
+ * return 108;//所有管理删除成功
+ * return 109;//所有管理员删除失败
+ */
+ 
+ 删除所有管理员
+ /**
+ * return 110;//修改单独信息成功
+ * return 109;//修改单独信息失败
+ */
+ 
+ -------------------------------------------------------------
+ 数据库：
+  admin ，新增字段：a_loginState  //记录管理员的登录状态 1:登录  0:未登录
+  user,   新增字段:u_loginState   //记录用户的登录状态  1:登录  0:未登录
+  
+-----------------------------------------------------------------------
+测试：
+//superadmin login
+ {"m_object":2,"m_op":"login","a_id":"0001","a_psd":"123456"}
+  
+//addAdmin
+ {"m_object":2,"m_op":"addAdmin","a_id":"0004","a_name":"elena","a_psd":"123","a_priority":"0","a_loginId":"0001"}
+  
+ {"m_object":2,"m_op":"deleteSingleAdmin","a_id":"0004","a_loginId":"0002"}
+
+
+
+
